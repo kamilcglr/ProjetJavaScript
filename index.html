@@ -5,15 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>JavaScript Project</title>
 </head>
 <body>
 <header>
     WIP Player Page
 </header>
-<ul id="filelist"></ul>
-<label for="myFile" class="btn">Select the folder of your mp3 files</label>
-<input type="file" id="myFile" style="display:none;" webkitdirectory/>
+<div class="container">
+        <label for="myFile" class="custom-file-upload">
+            Select the folder of your mp3 files
+            <input type="file" id="myFile" style="display:none;" webkitdirectory/>
+        </label>
+        <label for="myFile" class="custom-file-upload">
+            Select the folder of your videos
+            <input type="file" id="myVideo" style="display:none;" webkitdirectory/>
+        </label>
+</div>
+
+<div id="mainDiv">
+
+    <ol id="playlist">
+
+    </ol>
+
+    <button id="stop" class="btn"><i class="fa fa-stop"></i></button>
+    <button id="play" class="btn"><i id="play-icon" class="fa fa-play"></i></button>
+    <button id="next" class="btn"><i class="fa fa-forward"></i></button>
+
+</div>
+
+<!-- Scripts, to level elements have to be loaded at the end-->
 <script src="js/media.js"></script>
 <script src="js/playlist.js"></script>
 <script src="js/song.js"></script>

@@ -1,0 +1,197 @@
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic");
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+/*!* Reset *!*/
+
+/*html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {*/
+/*    margin: 2%;*/
+/*    padding: 0;*/
+/*    border: 0;*/
+/*    font-size: 100%;*/
+/*    font: inherit;*/
+/*    vertical-align: baseline;*/
+/*    font-family: 'Source Sans Pro';*/
+/*}*/
+
+/*span {*/
+/*    font-size: 90%;*/
+/*}*/
+
+/*body {*/
+
+/*    font-family: 'Source Sans Pro';*/
+/*    font-weight: 300;*/
+/*    color: #5d5d5d;*/
+/*    !*border-bottom: 1px solid black;*!*/
+/*    padding: 2em;*/
+/*}*/
+
+/*#myHeading {*/
+/*    color: #252122;*/
+/*    font-weight: 900;*/
+/*    font-size: 2.5em;*/
+/*    letter-spacing: -0.035em;*/
+/*    margin: 0 0 .5em 0;*/
+
+/*}*/
+
+/*p {*/
+/*    color: #24445C;*/
+/*    font-weight: 300;*/
+/*    font-size: 1.3em;*/
+/*    letter-spacing: -0.035em;*/
+/*    margin: 0 0 .5em 0;*/
+/*}*/
+
+/*button {*/
+/*    background-color: rgba(0, 0, 0, 0.3);*/
+/*    border: none;*/
+/*    color: white;*/
+/*    border-radius: 4px;*/
+/*    padding: .4em .4em;*/
+/*    text-align: center;*/
+/*    text-decoration: none;*/
+/*    display: inline-block;*/
+/*    font-size: 12px;*/
+/*    margin: 0.3em;*/
+/*}*/
+
+/*input {*/
+/*    border-radius: 4px;*/
+/*    padding: .4em .4em;*/
+/*    text-align: center;*/
+/*    text-decoration: none;*/
+/*    display: inline-block;*/
+/*    font-size: 11px;*/
+/*    margin: 0.3em;*/
+/*}*/
+
+/*table {*/
+/*    border-collapse: collapse;*/
+/*}*/
+
+/*th, td {*/
+/*    padding: 0.8em 15em 0.8em 15em;*/
+/*}*/
+
+/*th:last-of-type, td:last-of-type {*/
+/*    border-right: none;*/
+/*}*/
+
+/*th {*/
+/*    text-transform: uppercase;*/
+/*    border-right: 1px solid #fff;*/
+/*    color: #fff;*/
+/*    cursor: pointer;*/
+/*    font-weight: bold;*/
+/*    background-color: rgba(255, 51, 175, 0.3);*/
+/*}*/
+
+/*#mainCenter {*/
+/*    margin: 5em 15em 15em 20em;*/
+/*}*/
+
+body {
+    background: #121212;
+    text-align: center;
+    /*margin: 100px auto;*/
+    width: 80%;
+    padding: 0 40px;
+    font-size: 14px;
+    font-family: 'Raleway', serif;
+}
+
+h1 {
+    font-size: 20px;
+    color: white;
+}
+
+div {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #D5DDE4;
+}
+
+#mainDiv {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 10px;
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0;
+    width: 100%;
+    display: inline-block;
+    border: #FFFFFF;
+}
+
+li {
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    width: 96%;
+    padding: 15px 2%;
+    margin: 0;
+    text-align: left;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li span {
+    float: right;
+    color: #777B7E;
+}
+
+li.current {
+    color: #80cbc4;
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background: white;
+}
+
+.btn {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.99);
+    border-radius: 50%;
+    border: none; /* Remove borders */
+    color: #FFFFFF;
+    size: 50px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #80cbc4;
+    color: #fff;
+}
+
+i {
+    color: #000000;
+    user-select: none;
+
+}
+
+.custom-file-upload {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-weight: bold;
+    border-radius: 10pt;
+    background-color: #03DAC6;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.container {
+    text-align: center;
+    margin: 10px;
+}

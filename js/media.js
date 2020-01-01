@@ -11,10 +11,22 @@ function Media(path) {
     /** double */ //this.duration = undefined;
 }
 
-Media.prototype.play = function() {
-    this.isPlaying = true;
+function playable(testObj) {
+    if (typeof testObj.play == "function") {
+        return true;
+    }
+    return false;
+}
+/*
+Media.prototype.play = function () {
+    if (playable(this)) {
+        this.play();
+    }
 };
 
-Media.prototype.stop = function() {
-    this.isPlaying = false;
-};
+Media.prototype.stop = function () {
+    if (playable(this)) {
+        this.stop();
+        this.isPlaying = false;
+    }
+};*/

@@ -5,24 +5,29 @@
 function Playlist() {
     this.songs = [];
     this.nowPlayingIndex = 0;
-};
+}
 
 //---PLAYLIST PROTOTYPES
-Playlist.prototype.add = function(song) {
+Playlist.prototype.add = function (song) {
     this.songs.push(song);
 };
 
-Playlist.prototype.play = function() {
-    var currentSong = this.songs[this.nowPlayingIndex];
+Playlist.prototype.play = function () {
+    let currentSong = this.songs[this.nowPlayingIndex];
     currentSong.play();
 };
 
-Playlist.prototype.stop = function(){
-    var currentSong = this.songs[this.nowPlayingIndex];
+Playlist.prototype.pause = function () {
+    let currentSong = this.songs[this.nowPlayingIndex];
+    currentSong.pause();
+};
+
+Playlist.prototype.stop = function () {
+    let currentSong = this.songs[this.nowPlayingIndex];
     currentSong.stop();
 };
 
-Playlist.prototype.next = function() {
+Playlist.prototype.next = function () {
     this.stop();
     this.nowPlayingIndex++;
     if (this.nowPlayingIndex === this.songs.length) {
@@ -31,9 +36,9 @@ Playlist.prototype.next = function() {
     this.play();
 };
 
-Playlist.prototype.renderInElement = function(list) {
+Playlist.prototype.renderInElement = function (list) {
     list.innerHTML = "";
-    for (var i = 0; i < this.songs.length; i++) {
+    for (let i = 0; i < this.songs.length; i++) {
         list.innerHTML += this.songs[i].toHTML();
     }
 };
