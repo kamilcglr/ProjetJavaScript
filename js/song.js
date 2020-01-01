@@ -6,13 +6,8 @@
  */
 function Song(path) {
     Media.call(this, path);
-    let stringArray = path.substr(path.lastIndexOf('/') + 1);
-    stringArray = stringArray.replace(/\.[^/.]+$/, "")
-    stringArray = stringArray.split('_');
 
-    this.title = stringArray[0];
-    this.artist = stringArray[1];
-    this.date = stringArray[2];
+    this.artist = this.stringArray[1];
 
     this.audio = new Audio(path);
     this.audio.addEventListener('loadeddata', () => {
@@ -32,17 +27,19 @@ function Song(path) {
 Song.prototype = Object.create(Media.prototype);
 
 Song.prototype.play = function () {
+    document.getElementById("viewer").appendChild(this.audio);
     this.isPlaying = true;
     this.audio.play();
 };
 
 Song.prototype.stop = function () {
-    this.isPlaying = false;
-    this.audio.pause();
+    document.getElementById("viewer").innerHTML = "";
+    this.pause();
+    this.audio.currentTime = 0;
 };
 
 Song.prototype.pause = function () {
-    this.isPlaying = true;
+    this.isPlaying = false;
     this.audio.pause();
 };
 
@@ -59,8 +56,6 @@ Song.prototype.toHTML = function () {
     htmlString += this.title;
     htmlString += ' - ';
     htmlString += this.artist;
-    htmlString += ' - ';
-    htmlString += this.date;
     htmlString += '<span class="duration">';
     htmlString += this.duration;
     htmlString += '</span></li>';

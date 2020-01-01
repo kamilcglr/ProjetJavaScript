@@ -7,8 +7,14 @@
 function Media(path) {
     /** string */ this.path = path;
     /** string */ this.title = "";
-    /** boolean */ this.isPlaying = false;
-    /** double */ //this.duration = undefined;
+    /** boolean */this.isPlaying = false;
+    /** double */ this.duration = undefined;
+
+    this.stringArray = path.substr(path.lastIndexOf('/') + 1);
+    this.stringArray = this.stringArray.replace(/\.[^/.]+$/, "");
+    this.stringArray = this.stringArray.split('_');
+
+    this.title = this.stringArray[0];
 }
 
 function playable(testObj) {
@@ -17,10 +23,18 @@ function playable(testObj) {
     }
     return false;
 }
-/*
+
+
 Media.prototype.play = function () {
     if (playable(this)) {
         this.play();
+    }
+};
+
+Media.prototype.pause = function () {
+    if (playable(this)) {
+        this.pause();
+        this.isPlaying = false;
     }
 };
 
@@ -29,4 +43,4 @@ Media.prototype.stop = function () {
         this.stop();
         this.isPlaying = false;
     }
-};*/
+};

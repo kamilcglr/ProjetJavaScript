@@ -94,8 +94,8 @@
 body {
     background: #121212;
     text-align: center;
-    /*margin: 100px auto;*/
-    width: 80%;
+    margin: 10px auto;
+    width: 90%;
     padding: 0 40px;
     font-size: 14px;
     font-family: 'Raleway', serif;
@@ -106,16 +106,71 @@ h1 {
     color: white;
 }
 
+
+button {
+    border: none;
+    border-radius: 5px;
+    background: none;
+}
+
+.btn {
+    border-radius: 50%;
+    border: 2px solid #FFFFFF; /* Green */
+    color: #FFFFFF;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #80cbc4;
+    color: #fff;
+}
+
+#like {
+    float: right;
+    background: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#like-icon {
+    float: right;
+    font-size: 30px;
+    color: #FFFFFF;
+    user-select: none;
+}
+
+.custom-file-upload {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-weight: bold;
+    border-radius: 10pt;
+    background-color: #03DAC6;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+i {
+    text-align: center;
+    color: #FFFFFF;
+    user-select: none;
+    font-size: 24px;
+    padding: 10px;
+}
+
 div {
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-top: 10px;
-    border-radius: 4px;
-    border: 1px solid #D5DDE4;
+    margin: auto;
+    width: 90%;
+    padding: 10px;
 }
 
 #mainDiv {
     background-color: rgba(255, 255, 255, 0.05);
-    margin: 10px;
+    border-radius: 4px;
+    border: 1px solid #D5DDE4;
 }
 
 ol {
@@ -130,9 +185,9 @@ ol {
 li {
     color: #FFFFFF;
     border-bottom: 1px solid #FFFFFF;
-    width: 96%;
+    width: 90%;
     padding: 15px 2%;
-    margin: 0;
+    margin: 15px;
     text-align: left;
 }
 
@@ -150,48 +205,20 @@ li.current {
     font-weight: bold;
 }
 
-button {
-    border: none;
-    border-radius: 5px;
-    background: white;
-}
-
-.btn {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.99);
-    border-radius: 50%;
-    border: none; /* Remove borders */
-    color: #FFFFFF;
-    size: 50px;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    margin: 10px;
-}
-
-.btn:hover {
-    background-color: #80cbc4;
-    color: #fff;
-}
-
-i {
-    color: #000000;
-    user-select: none;
-
-}
-
-.custom-file-upload {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-    color: #000000;
-    font-weight: bold;
-    border-radius: 10pt;
-    background-color: #03DAC6;
-    display: inline-block;
-    margin: 10px;
-    padding: 6px 12px;
-    cursor: pointer;
-}
 
 .container {
     text-align: center;
-    margin: 10px;
 }
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /*!* 16:9 *!*/
+    padding-top: 25px;
+    height: 0;
+}
+
+.video-container video {
+    width: 100% !important;
+    height: auto !important;
+}
+

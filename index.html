@@ -5,25 +5,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/a65006ca47.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="styles/style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>JavaScript Project</title>
 </head>
 <body>
-<header>
-    WIP Player Page
-</header>
 <div class="container">
-        <label for="myFile" class="custom-file-upload">
-            Select the folder of your mp3 files
-            <input type="file" id="myFile" style="display:none;" webkitdirectory/>
-        </label>
-        <label for="myFile" class="custom-file-upload">
-            Select the folder of your videos
-            <input type="file" id="myVideo" style="display:none;" webkitdirectory/>
-        </label>
+    <h1>Media Player</h1>
+
+    <label for="myFile" class="custom-file-upload">
+        Select the folder of your mp3 files
+        <input type="file" id="myFile" style="display:none;" webkitdirectory/>
+    </label>
+    <label for="myVideo" class="custom-file-upload">
+        Select the folder of your videos
+        <input type="file" id="myVideo" style="display:none;" webkitdirectory/>
+    </label>
 </div>
 
+<div id="viewer" class="video-container">
+
+</div>
 <div id="mainDiv">
 
     <ol id="playlist">
@@ -31,8 +34,9 @@
     </ol>
 
     <button id="stop" class="btn"><i class="fa fa-stop"></i></button>
-    <button id="play" class="btn"><i id="play-icon" class="fa fa-play"></i></button>
+    <button id="play" class="btn"><i id="play-icon" class="fa fa-pause"></i></button>
     <button id="next" class="btn"><i class="fa fa-forward"></i></button>
+    <button id="like"><i id="like-icon" class="far fa-heart"></i></button>
 
 </div>
 
@@ -40,6 +44,7 @@
 <script src="js/media.js"></script>
 <script src="js/playlist.js"></script>
 <script src="js/song.js"></script>
+<script src="js/video.js"></script>
 <script src="js/app.js"></script>
 
 </body>

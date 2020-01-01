@@ -3,34 +3,34 @@
  * @constructor
  */
 function Playlist() {
-    this.songs = [];
+    this.medias = [];
     this.nowPlayingIndex = 0;
 }
 
 //---PLAYLIST PROTOTYPES
 Playlist.prototype.add = function (song) {
-    this.songs.push(song);
+    this.medias.push(song);
 };
 
 Playlist.prototype.play = function () {
-    let currentSong = this.songs[this.nowPlayingIndex];
-    currentSong.play();
+    let currentMedia = this.medias[this.nowPlayingIndex];
+    currentMedia.play();
 };
 
 Playlist.prototype.pause = function () {
-    let currentSong = this.songs[this.nowPlayingIndex];
-    currentSong.pause();
+    let currentMedia = this.medias[this.nowPlayingIndex];
+    currentMedia.pause();
 };
 
 Playlist.prototype.stop = function () {
-    let currentSong = this.songs[this.nowPlayingIndex];
-    currentSong.stop();
+    let currentMedia = this.medias[this.nowPlayingIndex];
+    currentMedia.stop();
 };
 
 Playlist.prototype.next = function () {
     this.stop();
     this.nowPlayingIndex++;
-    if (this.nowPlayingIndex === this.songs.length) {
+    if (this.nowPlayingIndex === this.medias.length) {
         this.nowPlayingIndex = 0;
     }
     this.play();
@@ -38,7 +38,7 @@ Playlist.prototype.next = function () {
 
 Playlist.prototype.renderInElement = function (list) {
     list.innerHTML = "";
-    for (let i = 0; i < this.songs.length; i++) {
-        list.innerHTML += this.songs[i].toHTML();
+    for (let i = 0; i < this.medias.length; i++) {
+        list.innerHTML += this.medias[i].toHTML();
     }
 };
