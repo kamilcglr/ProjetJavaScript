@@ -14,16 +14,19 @@ Playlist.prototype.add = function (song) {
 
 Playlist.prototype.play = function () {
     let currentMedia = this.medias[this.nowPlayingIndex];
+    currentMedia.isPlaying = true;
     currentMedia.play();
 };
 
 Playlist.prototype.pause = function () {
     let currentMedia = this.medias[this.nowPlayingIndex];
+    currentMedia.isPlaying = false;
     currentMedia.pause();
 };
 
 Playlist.prototype.stop = function () {
     let currentMedia = this.medias[this.nowPlayingIndex];
+    currentMedia.isPlaying = false;
     currentMedia.stop();
 };
 
@@ -34,6 +37,10 @@ Playlist.prototype.next = function () {
         this.nowPlayingIndex = 0;
     }
     this.play();
+};
+
+Playlist.prototype.setCurrentMedia = function (i) {
+    this.nowPlayingIndex = i;
 };
 
 Playlist.prototype.renderInElement = function (list) {

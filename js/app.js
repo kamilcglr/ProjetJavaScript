@@ -7,7 +7,7 @@ function readSongsFromDisk(playlist) {
     document.querySelector("#myFile").onchange = function (e) {
         for (let i = 0, f; f = e.target.files[i]; ++i) {
             console.log(f.webkitRelativePath);
-            let path = "ressources/" + f.webkitRelativePath;
+            let path = "resources/" + f.webkitRelativePath;
             let song = new Song(path);
             playlist.add(song);
         }
@@ -19,7 +19,7 @@ function readVideosFromDisk(playlist) {
     document.querySelector("#myVideo").onchange = function (e) {
         for (let i = 0, f; f = e.target.files[i]; ++i) {
             console.log(f.webkitRelativePath);
-            let path = "ressources/" + f.webkitRelativePath;
+            let path = "resources/" + f.webkitRelativePath;
             let movie = new Movie(path);
             playlist.add(movie);
         }

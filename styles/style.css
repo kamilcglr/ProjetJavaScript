@@ -102,10 +102,10 @@ body {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 35px;
+    font-weight: bold;
     color: white;
 }
-
 
 button {
     border: none;
@@ -126,12 +126,18 @@ button {
     color: #fff;
 }
 
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
 #like {
-    float: right;
+    position: absolute;
+    margin: 10px;
+    right: 20%;
     background: none;
     border-radius: 50%;
     cursor: pointer;
-    margin: 10px;
 }
 
 #like-icon {
@@ -161,6 +167,25 @@ i {
     padding: 10px;
 }
 
+#navigationL, #navigationR {
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 5px;
+    background: #FF0266;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+#navigationL{
+    float: left;
+}
+#navigationR{
+    float: right;
+}
+/*
+Divs
+*/
 div {
     margin: auto;
     width: 90%;

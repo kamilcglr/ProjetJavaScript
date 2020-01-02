@@ -28,21 +28,20 @@ function Movie(path) {
 Movie.prototype = Object.create(Media.prototype);
 
 Movie.prototype.play = function () {
+    this.video.play();
     document.getElementById("viewer").hidden = false;
     document.getElementById("viewer").appendChild(this.video);
-    this.isPlaying = true;
-    this.video.play();
+
 };
 
 Movie.prototype.stop = function () {
-    this.pause();
+    this.video.pause();
+    this.video.currentTime = 0;
     document.getElementById("viewer").hidden = true;
     document.getElementById("viewer").innerHTML = "";
-    this.video.currentTime = 0;
 };
 
 Movie.prototype.pause = function () {
-    this.isPlaying = false;
     this.video.pause();
 };
 

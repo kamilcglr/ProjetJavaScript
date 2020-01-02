@@ -27,19 +27,15 @@ function Song(path) {
 Song.prototype = Object.create(Media.prototype);
 
 Song.prototype.play = function () {
-    document.getElementById("viewer").appendChild(this.audio);
-    this.isPlaying = true;
     this.audio.play();
 };
 
 Song.prototype.stop = function () {
-    document.getElementById("viewer").innerHTML = "";
-    this.pause();
+    this.audio.pause();
     this.audio.currentTime = 0;
 };
 
 Song.prototype.pause = function () {
-    this.isPlaying = false;
     this.audio.pause();
 };
 

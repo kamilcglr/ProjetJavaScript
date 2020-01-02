@@ -16,31 +16,20 @@ function Media(path) {
 
     this.title = this.stringArray[0];
 }
-
-function playable(testObj) {
-    if (typeof testObj.play == "function") {
-        return true;
-    }
-    return false;
-}
-
+/* Dont work -> use global video element
 
 Media.prototype.play = function () {
-    if (playable(this)) {
-        this.play();
-    }
+    this.isPlaying = true;
+    this.play();
 };
 
 Media.prototype.pause = function () {
-    if (playable(this)) {
-        this.pause();
-        this.isPlaying = false;
-    }
+    this.isPlaying = false;
+    this.pause();
 };
 
 Media.prototype.stop = function () {
-    if (playable(this)) {
-        this.stop();
-        this.isPlaying = false;
-    }
+    this.isPlaying = false;
+    this.stop();
 };
+*/

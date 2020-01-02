@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/a65006ca47.js" crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/quiz.css"/>
+
+    <title>JavaScript Project</title>
+</head>
+<body>
+<form>
+    <input id="navigation" type="button" value="Home" onclick="window.location.href='index.html'"/>
+    <i></i>
+</form>
+<div class="container">
+    <h1>Quiz</h1>
+    <p id=help></p>
+    <button id="generate-quiz" class="validate"> Generate quiz <i class="fas fa-sync"></i></button>
+
+</div>
+
+<div id="mainDiv">
+    <div class="quiz-container">
+        <div id="quiz"></div>
+    </div>
+    <button id="previous">Previous Question</button>
+    <button id="next">Next Question</button>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
+</div>
+
+<!-- Scripts, to level elements have to be loaded at the end-->
+<script src="js/media.js"></script>
+<script src="js/playlist.js"></script>
+<script src="js/song.js"></script>
+<script src="js/video.js"></script>
+<script src="js/question.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/app2.js"></script>
+
+</body>
+</html>
