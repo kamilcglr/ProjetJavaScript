@@ -1,39 +1,42 @@
 "use strict";
 
 /**
- * Song Class
+ * Movie class.
  * @constructor
  */
 function Movie(path) {
     Media.call(this, path);
 
-    this.date = this.stringArray[1];
+    /** String */ this.date = this.stringArray[1];
 
-    this.video = document.createElement("video");
+    /** HTMLVideoElement */ this.video = document.createElement("video");
     this.video.setAttribute("src", path);
+
+    /**When the video is loaded, format the duration.*/
     this.video.addEventListener('loadeddata', () => {
-        this.duration = this.video.duration;
-
-        let hours = Math.floor(this.duration / 3600);
-        let minutes = Math.floor((this.duration - (hours * 3600)) / 60);
-        let seconds = this.duration - (hours * 3600) - (minutes * 60);
-
-        this.duration = hours.toString().padStart(2, '0') + ':' +
-            minutes.toString().padStart(2, '0') + ':' +
-            seconds.toString().slice(0, 2).padStart(2, '0');
-
+        this.duration = this.parseDuration(this.video.duration);
     });
 }
 
+/*
+* Movie inherit from Media.
+*/
 Movie.prototype = Object.create(Media.prototype);
 
+/**
+ * Play and show the video.
+ * */
 Movie.prototype.play = function () {
+    //Play the video element.
     this.video.play();
     document.getElementById("viewer").hidden = false;
     document.getElementById("viewer").appendChild(this.video);
 
 };
 
+/**
+ * Stop and hide the video.
+ * */
 Movie.prototype.stop = function () {
     this.video.pause();
     this.video.currentTime = 0;
@@ -41,15 +44,21 @@ Movie.prototype.stop = function () {
     document.getElementById("viewer").innerHTML = "";
 };
 
+/**
+ * Pause the video without hiding.
+ * */
 Movie.prototype.pause = function () {
     this.video.pause();
 };
 
-//Generates HTML code for index.html
+/**
+ * Generate HTML to render the video element.
+ * @return string
+ * */
 Movie.prototype.toHTML = function () {
     let htmlString = '<li';
 
-    //Checks if song is currently playing
+    //Checks if video is currently playing.
     if (this.isPlaying) {
         htmlString += ' class="current"';
     }
@@ -58,6 +67,16 @@ Movie.prototype.toHTML = function () {
     htmlString += this.title;
     htmlString += ' - ';
     htmlString += this.date;
+
+    //Checks if video is liked. Decide which icon to choose.
+    let classIcon;
+    if (this.liked === true) {
+        classIcon = "likeIcon fas fa-heart";
+    } else {
+        classIcon = "likeIcon far fa-heart"
+    }
+
+    htmlString += `<button id="${this.title}" class="likeButton"><i  class="${classIcon}"></i></button>`;
     htmlString += '<span class="duration">';
     htmlString += this.duration;
     htmlString += '</span></li>';

@@ -1,5 +1,9 @@
 /**
- * Main Class of song and movie
+ * Quiz class.
+ * @param playlist to build the quiz with.
+ * PLEASE RESPECT FILE TITLE FORMATS. SEE app2.js
+ * Tracks the score and index of questions.
+ * Generate and store the questions.
  * @constructor
  */
 function Quiz(playlist) {
@@ -9,8 +13,13 @@ function Quiz(playlist) {
     this.currentQuestionIndex = 0;
 }
 
+/**
+ * Return a list of questions created with the medias elements in playlist.
+ * @param playlist
+ * @return {[]} List of Question.
+ */
 Quiz.prototype.generateQuestions = function (playlist) {
-    let questions = [];
+    /** List of Question */ let questions = [];
 
     for (let i = 0; i < 5; i++) {
         let currentMedia = playlist.medias[i];
@@ -26,6 +35,7 @@ Quiz.prototype.generateQuestions = function (playlist) {
             shuffle(answerOptions);
             question = new Question(text, answerOptions, correctAnswer, false, currentMedia);
         }
+        // One question out of two is a blind test when the media is music.
         if (currentMedia instanceof Song) {
             if (i % 2 !== 0) {
                 text = "Who sang " + currentMedia.title + " ?";
@@ -88,71 +98,10 @@ function shuffle(array) {
     }
 }
 
-/*
-Quiz.prototype.renderInElement = function (list) {
-    list.innerHTML = "";
-    for (let i = 0; i < this.medias.length; i++) {
-        list.innerHTML += this.questions[i].toHTML(i);
-    }
-};
-
-//Generates HTML code for quiz.html
-Quiz.prototype.toHTML = function (i) {
-    let htmlString = '<li id="q';
-    htmlString += i;
-    htmlString += '">';
-
-    //Checks if this is a blind test
-    if (this.blind_test === true) {
-
-        //--BUTTON FUNCTIONALITY
-        let playButton = document.getElementById("play");
-        let playIcon = document.getElementById("play-icon");
-        /!*Fix for pause that cannot be toggled*!/
-        playIcon.classList.toggle("fa-play");
-        playButton.onclick = function () {
-            playIcon.classList.toggle("fa-play");
-            if (playing) {
-                playing = false;
-                playlist.pause();
-
-            } else {
-                playing = true;
-                playlist.play();
-            }
-            playlist.renderInElement(playlistElement);
-        };
-
-        let nextButton = document.getElementById("next");
-        nextButton.onclick = function () {
-            playlist.next();
-            playlist.renderInElement(playlistElement);
-        };
-
-        let stopButton = document.getElementById("stop");
-        stopButton.onclick = function () {
-            if (playing) {
-                playing = false;
-                playIcon.classList.toggle("fa-play");
-            }
-
-            playlist.stop();
-            playlist.renderInElement(playlistElement);
-        };
-    }
-
-    htmlString += this.title;
-    htmlString += ' - ';
-    htmlString += this.date;
-    htmlString += '<span class="duration">';
-    htmlString += this.duration;
-    htmlString += '</span></li>';
-
-    return htmlString;
-};*/
-
-/*Theses arrays permits to generate answer options.
- Do not include options that are already in questions.*/
+/**
+ * Theses arrays permits to generate answer options.
+ * Do not include options that are already in questions.
+ * */
 let artistsDataArray = [
     'Justice',
     'The Beatles',

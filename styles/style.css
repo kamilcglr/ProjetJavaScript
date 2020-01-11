@@ -1,98 +1,15 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic");
 @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
-
-/*!* Reset *!*/
-
-/*html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {*/
-/*    margin: 2%;*/
-/*    padding: 0;*/
-/*    border: 0;*/
-/*    font-size: 100%;*/
-/*    font: inherit;*/
-/*    vertical-align: baseline;*/
-/*    font-family: 'Source Sans Pro';*/
-/*}*/
-
-/*span {*/
-/*    font-size: 90%;*/
-/*}*/
-
-/*body {*/
-
-/*    font-family: 'Source Sans Pro';*/
-/*    font-weight: 300;*/
-/*    color: #5d5d5d;*/
-/*    !*border-bottom: 1px solid black;*!*/
-/*    padding: 2em;*/
-/*}*/
-
-/*#myHeading {*/
-/*    color: #252122;*/
-/*    font-weight: 900;*/
-/*    font-size: 2.5em;*/
-/*    letter-spacing: -0.035em;*/
-/*    margin: 0 0 .5em 0;*/
-
-/*}*/
-
-/*p {*/
-/*    color: #24445C;*/
-/*    font-weight: 300;*/
-/*    font-size: 1.3em;*/
-/*    letter-spacing: -0.035em;*/
-/*    margin: 0 0 .5em 0;*/
-/*}*/
-
-/*button {*/
-/*    background-color: rgba(0, 0, 0, 0.3);*/
-/*    border: none;*/
-/*    color: white;*/
-/*    border-radius: 4px;*/
-/*    padding: .4em .4em;*/
-/*    text-align: center;*/
-/*    text-decoration: none;*/
-/*    display: inline-block;*/
-/*    font-size: 12px;*/
-/*    margin: 0.3em;*/
-/*}*/
-
-/*input {*/
-/*    border-radius: 4px;*/
-/*    padding: .4em .4em;*/
-/*    text-align: center;*/
-/*    text-decoration: none;*/
-/*    display: inline-block;*/
-/*    font-size: 11px;*/
-/*    margin: 0.3em;*/
-/*}*/
-
-/*table {*/
-/*    border-collapse: collapse;*/
-/*}*/
-
-/*th, td {*/
-/*    padding: 0.8em 15em 0.8em 15em;*/
-/*}*/
-
-/*th:last-of-type, td:last-of-type {*/
-/*    border-right: none;*/
-/*}*/
-
-/*th {*/
-/*    text-transform: uppercase;*/
-/*    border-right: 1px solid #fff;*/
-/*    color: #fff;*/
-/*    cursor: pointer;*/
-/*    font-weight: bold;*/
-/*    background-color: rgba(255, 51, 175, 0.3);*/
-/*}*/
-
-/*#mainCenter {*/
-/*    margin: 5em 15em 15em 20em;*/
-/*}*/
+:root {
+    --main-bg-color: #000036;
+    --blue-bg-color: #121212;
+    --accent: #ffbd32;
+    --gray: #e5e9ed;
+    --primary-light: #1f286f;
+}
 
 body {
-    background: #121212;
+    background: var(--blue-bg-color);
     text-align: center;
     margin: 10px auto;
     width: 90%;
@@ -107,82 +24,6 @@ h1 {
     color: white;
 }
 
-button {
-    border: none;
-    border-radius: 5px;
-    background: none;
-}
-
-.btn {
-    border-radius: 50%;
-    border: 2px solid #FFFFFF; /* Green */
-    color: #FFFFFF;
-    cursor: pointer;
-    margin: 10px;
-}
-
-.btn:hover {
-    background-color: #80cbc4;
-    color: #fff;
-}
-
-#buttons {
-    display: flex;
-    justify-content: center;
-}
-
-#like {
-    position: absolute;
-    margin: 10px;
-    right: 20%;
-    background: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-#like-icon {
-    float: right;
-    font-size: 30px;
-    color: #FFFFFF;
-    user-select: none;
-}
-
-.custom-file-upload {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-    color: #000000;
-    font-weight: bold;
-    border-radius: 10pt;
-    background-color: #03DAC6;
-    display: inline-block;
-    margin: 10px;
-    padding: 6px 12px;
-    cursor: pointer;
-}
-
-i {
-    text-align: center;
-    color: #FFFFFF;
-    user-select: none;
-    font-size: 24px;
-    padding: 10px;
-}
-
-#navigationL, #navigationR {
-    font-size: 15pt;
-    font-weight: bold;
-    padding: 5px;
-    background: #FF0266;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-}
-#navigationL{
-    float: left;
-}
-#navigationR{
-    float: right;
-}
 /*
 Divs
 */
@@ -192,6 +33,7 @@ div {
     padding: 10px;
 }
 
+/* Playlist Elements */
 #mainDiv {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 4px;
@@ -230,7 +72,6 @@ li.current {
     font-weight: bold;
 }
 
-
 .container {
     text-align: center;
 }
@@ -245,5 +86,105 @@ li.current {
 .video-container video {
     width: 100% !important;
     height: auto !important;
+}
+
+/*
+=================== BUTTONS =====================
+*/
+.btnMedia {
+    background: none;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btnMedia:hover {
+    background-color: #80cbc4;
+    color: #fff;
+}
+
+/* Main Button scheme */
+.button{
+    border-width: 0;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: var(--accent);
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+
+    transition: background-color .3s;
+}
+
+.button:hover {
+    opacity:1;
+    background-color: var(--accent);
+}
+
+.likeButton {
+    margin: 10px;
+    background: none;
+    cursor: pointer;
+    border-width: 0;
+}
+
+.likeIcon {
+    font-size: 15px;
+    color: #FFFFFF;
+    user-select: none;
+}
+
+#navigationL, #navigationR {
+    margin: 10px;
+}
+
+#navigationL{
+    float: left;
+}
+#navigationR{
+    float: right;
+}
+
+.custom-file-upload {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-weight: bold;
+    border-radius: 10pt;
+    background-color: #03DAC6;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+i {
+    text-align: center;
+    color: #FFFFFF;
+    user-select: none;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.validate {
+    border-radius: 10pt;
+    background-color: #f5f5f5;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.validate:hover {
+    background-color: #80cbc4;
+    color: #fff;
+}
+
+.validate i{
+    color: #FFFFFF;
 }
 

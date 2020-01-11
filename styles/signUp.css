@@ -1,14 +1,17 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box}
+* {
+    box-sizing: border-box
+}
 
-label{
+label {
     color: #FFFFFF;
 }
 
-#info{
-    color: #FFFFFF;
-    font-size: 25px;
+#info {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--accent);
 }
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -29,21 +32,6 @@ hr {
     margin-bottom: 25px;
 }
 
-/* Set a style for all buttons */
-button {
-    background-color: #03DAC6;
-    color: #000000;
-    padding: 14px 20px;
-    margin: auto    ;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    opacity:1;
-}
-
 /* Float and signup buttons and add an equal width */
 .signupbtn {
     width: 50%;
@@ -59,4 +47,12 @@ button:hover {
     content: "";
     clear: both;
     display: table;
+}
+
+li {
+    list-style-type: none;
+    border-bottom: none;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'Raleway', serif;
 }

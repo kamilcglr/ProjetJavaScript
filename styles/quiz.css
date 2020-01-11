@@ -3,26 +3,9 @@
     text-align: center;
 }
 
-.validate {
-    border-radius: 10pt;
-    background-color: #f5f5f5;
+#generateQuiz i {
     color: #000000;
-    font-weight: bold;
-    padding: 10px;
-    vertical-align: middle;
-    cursor: pointer;
 }
-
-.validate:hover {
-    background-color: #80cbc4;
-    color: #fff;
-}
-
-i {
-    color: #000000;
-    vertical-align: middle;
-}
-
 
 .question {
     font-size: 30px;
@@ -43,11 +26,10 @@ i {
     margin-bottom: 10px;
 }
 
-button {
+.navigationButton {
     font-family: 'Work Sans', sans-serif;
     font-size: 22px;
-    background-color: #03DAC6;
-    color: #fff;
+    background-color: var(--gray);
     border: 0px;
     border-radius: 3px;
     padding: 20px;
@@ -55,10 +37,13 @@ button {
     margin-bottom: 20px;
 }
 
-button:hover {
+.navigationButton:hover {
     background-color: #38a;
 }
 
+#submit {
+    background-color: var(--accent);
+}
 
 .slide {
     position: absolute;
@@ -92,7 +77,7 @@ button:hover {
     font-size: 30px;
 }
 
-.userInput{
-    font-size: 25px!important;
+.userInput {
+    font-size: 25px !important;
 }
 

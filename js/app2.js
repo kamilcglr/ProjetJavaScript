@@ -1,9 +1,22 @@
 "use strict";
+/**
+ * Main script of the quiz page.
+ * Create the quiz and handle user interactions with the page.
+ * it also render the quiz and verify answers.
+ *
+ * Quiz is GENERATED thanks to the title of the file. Please respect the format if you want to use other medias.
+ * If the media is a song, the question is a blind test every other time.
+ */
+
 let playlist = new Playlist();
 let quiz = undefined;
 let mainDiv = document.getElementById('mainDiv');
 mainDiv.hidden = true;
 
+/**
+ * Load the medias from disk. Please respect the format and load AT LEAST 2 songs and 1 video.
+ * @param playlist
+ */
 function readMediasFromDisk(playlist) {
     playlist.add(new Song("resources/songs/Imagine_John Lenon.mp3"));
     playlist.add(new Song("resources/songs/Under Pressure_Queen.mp3"));
@@ -17,28 +30,32 @@ function printNumberOfMedias(playlist) {
     document.getElementById("help").innerHTML = '<p id="help">' + playlist.medias.length + ' medias loaded.</p>';
 }
 
-/*
-* Main
-*/
+/**
+ * START of script.
+ */
 readMediasFromDisk(playlist);
 quiz = new Quiz(playlist);
 
-let generateButton = document.getElementById("generate-quiz");
+let generateButton = document.getElementById("generateQuiz");
+
+/**
+ * When clicked, the quiz is built and rendered thanks to the medias in playlist.
+ */
 generateButton.onclick = function () {
     mainDiv.hidden = false;
 
     function buildQuizUI() {
-        // place to store the HTML output
-        const output = [];
+
+        /**String to store the HTML*/const output = [];
 
         quiz.questions.forEach((currentQuestion, questionNumber) => {
 
-            // if it is a blind test, use radio button, else a user input place
+            // If it is a blind test, use radio button, else a user input place.
             if (currentQuestion.isBlindTest === false) {
                 // list of answer choices
                 const answers = [];
 
-                // for each available answer create radio button
+                // for each available answer create radio button.
                 for (let i = 0; i < 3; i++) {
                     answers.push(
                         `<label>             
@@ -47,7 +64,6 @@ generateButton.onclick = function () {
                         </label>`
                     );
                 }
-
                 output.push(
                     `<div class="slide">
                         <div class="question"> ${currentQuestion.text} </div>
@@ -75,7 +91,6 @@ generateButton.onclick = function () {
         });
 
         //add the result page
-        //add this question and its answers to the output
         output.push(
             `<div class="slide">
             <div id="score"> </div>
@@ -88,15 +103,16 @@ generateButton.onclick = function () {
 
     function showResults() {
         // gather answer containers from quiz
-        const answerContainers = quizContainer.querySelectorAll(".answers");
+        /** List of containers */ const answerContainers = quizContainer.querySelectorAll(".answers");
 
-        // for each question...
         quiz.questions.forEach((currentQuestion, questionNumber) => {
-            // find selected answer
+            // find selected answer by user
             const answerContainer = answerContainers[questionNumber];
             let selector;
             let userAnswer;
 
+            // When the question is a blind test, the user entry is a text input.
+            // When the question is not a blind test, the user entry is a radio button.
             if (currentQuestion.isBlindTest === false) {
                 selector = `input[name=question${questionNumber}]:checked`;
                 userAnswer = (answerContainer.querySelector(selector) || {}).value;
@@ -129,6 +145,10 @@ generateButton.onclick = function () {
         scoreDiv.innerHTML = `Your score is ${quiz.score} out of ${quiz.questions.length}`;
     }
 
+    /**
+     * Show the slide.
+     * @param n
+     */
     function showSlide(n) {
         slides[currentSlide].classList.remove("active-slide");
         slides[n].classList.add("active-slide");
@@ -136,24 +156,28 @@ generateButton.onclick = function () {
         playlist.stop();
 
         if (currentSlide === 0) {
+            //Hide previous Button.
             previousButton.style.display = "none";
         } else {
+            //Display previous Button.
             previousButton.style.display = "inline-block";
         }
 
         if (currentSlide === slides.length - 2) {
+            //Display submit button. End of the quiz.
             nextButton.style.display = "none";
             submitButton.style.display = "inline-block";
         } else {
             if (currentSlide <= slides.length - 2) {
+                //Display next button.
                 nextButton.style.display = "inline-block";
                 submitButton.style.display = "none";
-
                 if (quiz.questions[n].isBlindTest === true) {
                     playlist.setCurrentMedia(n);
                     playlist.play()
                 }
             } else {
+                //Display only previous. Result page.
                 nextButton.style.display = "none";
                 submitButton.style.display = "none";
             }
@@ -172,7 +196,7 @@ generateButton.onclick = function () {
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
 
-// display quiz right away
+    // Display quiz right away
     buildQuizUI();
 
     const previousButton = document.getElementById("previous");
@@ -184,13 +208,15 @@ generateButton.onclick = function () {
 
     showSlide(0);
 
-// on submit, show results
+    // On submit, show results
     submitButton.onclick = function () {
         showResults();
         showNextSlide();
+        generateButton.innerHTML = `Restart <i class="fas fa-sync"></i>`;
+        generateButton.onclick = function () {
+            location.reload();
+        }
     };
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
-
-
 };
