@@ -13,16 +13,16 @@
   Cliquer sur le bouton "select the folder of your mp3 files" puis choisir le dossier 
   qui contient les fichiers mp3. Le titre de ces fichiers doivent respecter le format
   Titre_Artiste.mp3 pour être représentés correctement.
-  ![ChooseMusic1]()
+  ![ChooseMusic1](img/1.png | width=300)
   Cliquez ensuite sur OK et valider.
-  ![ChooseMusic2]()
+  ![ChooseMusic2](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/2.png | width=300)
 
   ### Charger ses videos
   Effectuer les mêmes opérations en cliquant sur le bouton "Select the folder of your videos".
   Le titre des videos doit respecter le format Titre_YYYY.mp4.
-  ![ChooseVideo1]()
+  ![ChooseVideo1](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/3.png | width=300)
     Cliquez ensuite sur OK et valider.
-  ![ChooseVideo2]()
+  ![ChooseVideo2](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/4.png | width=300)
 
   
  ## Architecture du projet
