@@ -1,7 +1,13 @@
 # Projet JavaScript - 2019/2020 Kamil CAGLAR
  
  Simple lecteur de musique, de vidéos. 
+   ![](img/mediaPlayer.png)
+   ![](img/mediaPlayer2.png)
  Quiz et page d'inscription sans enregistrement.
+  ![](img/quiz.png)
+  ![](img/quiz2.png)
+  ![](img/signup.png)
+  ![](img/signup2.png)
  Ce Readme ne détaille pas le rôle de chaque fonction (voir les commentaires dans le code) 
  mais donne une information sur l'architecture du projet. 
  
@@ -13,16 +19,16 @@
   Cliquer sur le bouton "select the folder of your mp3 files" puis choisir le dossier 
   qui contient les fichiers mp3. Le titre de ces fichiers doivent respecter le format
   Titre_Artiste.mp3 pour être représentés correctement.
-  ![ChooseMusic1](img/1.png | width=300)
+  ![ChooseMusic1](img/1.png)
   Cliquez ensuite sur OK et valider.
-  ![ChooseMusic2](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/2.png | width=300)
+  ![ChooseMusic2](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/2.png)
 
   ### Charger ses videos
   Effectuer les mêmes opérations en cliquant sur le bouton "Select the folder of your videos".
   Le titre des videos doit respecter le format Titre_YYYY.mp4.
-  ![ChooseVideo1](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/3.png | width=300)
+  ![ChooseVideo1](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/3.png)
     Cliquez ensuite sur OK et valider.
-  ![ChooseVideo2](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/4.png | width=300)
+  ![ChooseVideo2](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/4.png)
 
   
  ## Architecture du projet
