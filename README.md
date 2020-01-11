@@ -13,7 +13,7 @@
   Cliquer sur le bouton "select the folder of your mp3 files" puis choisir le dossier 
   qui contient les fichiers mp3. Le titre de ces fichiers doivent respecter le format
   Titre_Artiste.mp3 pour être représentés correctement.
-  ![ChooseMusic1](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/1.png | width=300)
+  ![ChooseMusic1](img/1.png | width=300)
   Cliquez ensuite sur OK et valider.
   ![ChooseMusic2](https://github.com/kamilcglr/ProjetJavaScript/blob/master/img/2.png | width=300)
 
