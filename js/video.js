@@ -14,7 +14,7 @@ function Movie(path) {
 
     /**When the video is loaded, format the duration.*/
     this.video.addEventListener('loadeddata', () => {
-        this.duration = this.parseDuration(this.video.duration);
+        this.duration = this.formatDuration(this.video.duration);
     });
 }
 

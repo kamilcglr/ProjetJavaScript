@@ -28,7 +28,7 @@ function Media(path) {
  * @param duration
  * @return string formatted duration
  */
-Media.prototype.parseDuration = function (duration) {
+Media.prototype.formatDuration = function (duration) {
     let hours = Math.floor(duration / 3600);
     let minutes = Math.floor((duration - (hours * 3600)) / 60);
     let seconds = duration - (hours * 3600) - (minutes * 60);

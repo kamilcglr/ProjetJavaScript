@@ -13,7 +13,7 @@ function Song(path) {
 
     /**When the song is loaded, format the duration.*/
     this.audio.addEventListener('loadeddata', () => {
-        this.duration = this.parseDuration(this.audio.duration)
+        this.duration = this.formatDuration(this.audio.duration)
     });
 }
 
