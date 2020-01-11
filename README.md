@@ -8,8 +8,9 @@
   ![](img/quiz2.png)
   ![](img/signup.png)
   ![](img/signup2.png)
- Ce Readme ne détaille pas le rôle de chaque fonction (voir les commentaires dans le code) 
- mais donne une information sur l'architecture du projet. 
+ 
+ **Ce Readme ne détaille pas le rôle de chaque fonction (voir les commentaires dans le code) 
+ mais donne une information sur l'architecture du projet.**
  
  ## Comment charger ses musiques dans le lecteur ? 
   ### Prérequis
